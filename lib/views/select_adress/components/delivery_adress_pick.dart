@@ -18,7 +18,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
   final TextEditingController addressController = TextEditingController();
   int radioContinerIndes = 1;
 
-  final paymentController = Get.find<PayMentController>();
+  final paymentController = Get.find<PaymentController>();
   final authController = Get.find<AuthController>();
 
   @override

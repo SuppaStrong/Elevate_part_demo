@@ -13,6 +13,6 @@ class HomeBinding implements Bindings {
     Get.lazyPut<ProductRepository>(() => ProductRepository(Get.find()));
     Get.lazyPut<ProductProvider>(() => ProductProvider(Get.find()));
     Get.lazyPut<HomeController>(() => HomeController(Get.find()));
-    Get.put(PayMentController(), permanent: true);
+    Get.put(PaymentController(), permanent: true);
   }
 }

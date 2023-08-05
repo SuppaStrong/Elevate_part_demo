@@ -1,5 +1,5 @@
 import 'package:elevate_ecommerce/shared/widgets/default_button.dart';
-import 'package:elevate_ecommerce/views/select_adress/components/delivery_adress_pick.dart';
+import 'package:elevate_ecommerce/views/select_address/components/delivery_address_pick.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

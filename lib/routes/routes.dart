@@ -7,7 +7,7 @@ import 'package:elevate_ecommerce/views/complete_profile/complete_profile_screen
 import 'package:elevate_ecommerce/views/forgot_password/forgot_password_screen.dart';
 import 'package:elevate_ecommerce/views/login_success/login_success_screen.dart';
 import 'package:elevate_ecommerce/views/payment_mode/payment_screen.dart';
-import 'package:elevate_ecommerce/views/select_adress/select_adress.dart';
+import 'package:elevate_ecommerce/views/select_address/select_address.dart';
 import 'package:elevate_ecommerce/views/sign_in/sign_in_screen.dart';
 import 'package:elevate_ecommerce/views/sign_up/sign_up_screen.dart';
 import 'package:elevate_ecommerce/views/splash/splash_screen.dart';
@@ -76,7 +76,7 @@ class Routes {
     ),
     GetPage(
       name: '/payment',
-      page: () => const PaymentModeScreen(),
+      page: () => PaymentModeScreen(),
       bindings: [
         ProductBinding(),
         AuthBinding(),

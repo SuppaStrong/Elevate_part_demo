@@ -16,7 +16,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
   final TextEditingController phoneController = TextEditingController();
   final TextEditingController phoneController2 = TextEditingController();
   final TextEditingController addressController = TextEditingController();
-  int radioContinerIndes = 1;
+  int radioIndex = 1;
 
   final paymentController = Get.find<PaymentController>();
   final authController = Get.find<AuthController>();
@@ -30,13 +30,13 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
             address: "Nguyễn Ngọc Nại , Thanh Xuân , Hà Nội",
             name: authController.displayUserName.value,
             phone: "0833842320",
-            title: "Your Home Adress",
+            title: "Your Home Address",
             value: 1,
             color: Colors.white,
             icon: Container(),
             onChanged: (int? value) {
               setState(() {
-                radioContinerIndes = value!;
+                radioIndex = value!;
               });
             },
           ),
@@ -53,7 +53,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
               color: Colors.white,
               icon: InkWell(
                 onTap: () => dialogInput(
-                  diallogTitle: "Enter your phone number",
+                  dialogTitle: "Enter your phone number",
                   dialogHintText: "Enter your phone number",
                   isPhoneNumber: true,
                   textController: phoneController,
@@ -70,7 +70,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
               ),
               onChanged: (int? value) {
                 setState(() {
-                  radioContinerIndes = value!;
+                  radioIndex = value!;
                 });
                 //paymentController.updatePosition();
               },
@@ -89,7 +89,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
               color: Colors.white,
               icon: InkWell(
                 onTap: () => dialogInput(
-                  diallogTitle: "Enter your phone number",
+                  dialogTitle: "Enter your phone number",
                   dialogHintText: "Enter your phone number",
                   isPhoneNumber: true,
                   textController: phoneController2,
@@ -107,7 +107,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
               ),
               onChanged: (int? value) {
                 setState(() {
-                  radioContinerIndes = value!;
+                  radioIndex = value!;
                 });
                 paymentController.updatePosition();
               },
@@ -119,14 +119,14 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
   }
 
   void dialogInput({
-    required String diallogTitle,
+    required String dialogTitle,
     required String dialogHintText,
     required bool isPhoneNumber,
     required TextEditingController textController,
     required Function onConfirm,
   }) {
     Get.defaultDialog(
-      title: diallogTitle,
+      title: dialogTitle,
       titleStyle: const TextStyle(
         fontSize: 16,
         color: Colors.black,
@@ -226,7 +226,7 @@ class _DeliveryContainerWidgetState extends State<DeliveryContainerWidget> {
         children: [
           Radio(
             value: value,
-            groupValue: radioContinerIndes,
+            groupValue: radioIndex,
             fillColor:
                 MaterialStateColor.resolveWith((states) => kPrimaryColor),
             onChanged: (int? value) {

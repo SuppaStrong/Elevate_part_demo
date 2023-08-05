@@ -85,6 +85,7 @@ class PaymentController extends GetxController {
     try {
       paymentIntentData = await createPaymentIntent(amount, currency);
       if (paymentIntentData != null) {
+        print("payment start");
         await Stripe.instance.initPaymentSheet(
             paymentSheetParameters: SetupPaymentSheetParameters(
           // applePay: true,

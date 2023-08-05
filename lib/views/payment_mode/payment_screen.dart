@@ -4,9 +4,13 @@ import 'package:elevate_ecommerce/views/payment_mode/components/payment_method_c
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PaymentModeScreen extends StatelessWidget {
-  const PaymentModeScreen({Key? key}) : super(key: key);
+import '../../controllers/cart/cart_controller.dart';
+import '../../controllers/payment/payment_controller.dart';
 
+class PaymentModeScreen extends StatelessWidget {
+  PaymentModeScreen({Key? key}) : super(key: key);
+  final paymentController = Get.find<PaymentController>();
+  final cartController = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -88,7 +92,9 @@ class PaymentModeScreen extends StatelessWidget {
                   paymentMethodImage: "assets/images/Paypal.png",
                 ),
                 PayMentCard(
-                  onTap: () {},
+                  onTap: () {
+                    paymentController.stripePayment(amount: "${cartController.total}", currency: "USD");
+                  },
                   isIcon: false,
                   paymentNameTitle: "Stripe",
                   paymentMethodImage: "assets/images/Stripe.png",

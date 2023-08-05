@@ -114,3 +114,7 @@ OutlineInputBorder outlineInputBorder() {
     borderSide: const BorderSide(color: kTextColor),
   );
 }
+
+// Stripe
+const stripePublishableKey =
+    "pk_test_51Ls9njDQKUM4zXrL7tA4TGpfcHKhjtn7K8Aka8uCZvjiV1RPq8jwcPwWUFqSg7Pc0k1PcNddfnEfxqeqX0FCraSa002El25Vch";
